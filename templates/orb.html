@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:1000,1000">
+    <link href="styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+    body {
+        margin: 0;
+        background: #ffffff;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+
+    .body {
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.5;
+        background-color: #f1f3fb;
+        padding: 0 2rem;
+    }
+
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header {
+        background: #191970;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .logo {
+        float: left;
+        padding: 10px 0;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 23px;
+
+        position: relative;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: #DC143C;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: #ffffff;
+
+        position: absolute;
+        top: 0;
+        width: 0%;
+
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 100%;
+    }
+
+    nav1 {}
+
+    nav1 center {
+        text-align-last: center;
+    }
+
+    nav1 ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav1 li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 23px;
+
+        position: relative;
+    }
+
+    nav1 a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    #service {
+        background: white;
+    }
+
+    .grid_wrapper {
+        padding: 4rem;
+        margin-left: 16rem;
+        margin-right: 16rem;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 4em;
+    }
+
+    .item {}
+
+
+    .card {
+        text-decoration: none;
+    }
+
+    .card_content {
+        padding: 1rem;
+    }
+
+
+    .wrapper {
+        padding: 4rem;
+        margin-left: 15rem;
+        margin-right: 0rem;
+
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 4em;
+    }
+
+    .cards_wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cards_wrap .card_item {
+        width: 25%;
+        padding: 10px;
+    }
+
+    .cards_wrap .card_inner {
+        background: #191970;
+    }
+
+    .cards_wrap .card_top {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        padding-bottom: 0;
+    }
+
+    .cards_wrap .card_bottom {
+        padding: 15px;
+    }
+
+    .cards_wrap .card_bottom .card_category {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .cards_wrap .card_bottom .card_info {
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px dashed #DC143C;
+    }
+
+    .cards_wrap .card_bottom .card_info .title {
+        color: #0071bc;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .cards_wrap .card_bottom .card_creator {
+        text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+        .cards_wrap .card_item {
+            width: 33.3%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cards_wrap .card_item {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 528px) {
+        .cards_wrap .card_item {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #191970;
+        color: white;
+        text-align: center;
+    }
+
+
+
+    .button {
+        border: none;
+        color: #DC143C;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #DC143C;
+        color: black;
+        border: 2px solid #DC143C;
+    }
+
+    .button1:hover {
+        background-color: #DC143C;
+        color: white;
+    }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+
+
+    input {
+        appearance: none;
+        border-radius: 0;
+    }
+
+    .card1 {
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 425px;
+        background-color: #87CEFA;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px 0 rgba(#999, .25);
+        padding: .75rem;
+    }
+
+    .card1-image {
+        border-radius: 8px;
+        overflow: hidden;
+        padding-bottom: 65%;
+        background-image: url('https://ieeecs-media.computer.org/wp-media/2018/09/10224026/digital-health-automation-2.jpg');
+        background-repeat: no-repeat;
+        background-size: 150%;
+        background-position: 0 5%;
+        position: relative;
+    }
+
+    .card1-heading {
+        position: absolute;
+        left: 10%;
+        top: 15%;
+        right: 10%;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: black;
+        line-height: 1.222;
+
+        small {
+            display: block;
+            font-size: .75em;
+            font-weight: 400;
+            margin-top: .25em;
+        }
+    }
+
+    .card1-form {
+        padding: 2rem 1rem 0;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        padding-top: 1.5rem;
+
+        &+.input {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .input-label {
+        color: #8597a3;
+        position: absolute;
+        top: 1.5rem;
+        transition: .25s ease;
+    }
+
+    .input-field {
+        border: 0;
+        z-index: 1;
+        background-color: transparent;
+        border-bottom: 2px solid #eee;
+        font: inherit;
+        font-size: 1.125rem;
+        padding: .25rem 0;
+
+        &:focus,
+        &:valid {
+            outline: 0;
+            border-bottom-color: #6658d3;
+
+            &+.input-label {
+                color: #6658d3;
+                transform: translateY(-1.5rem);
+            }
+        }
+    }
+
+    .action {
+        margin-top: 2rem;
+    }
+
+    .action-button {
+        font: inherit;
+        font-size: 1.25rem;
+        padding: 1em;
+        width: 100%;
+        font-weight: 500;
+        background-color: #191970;
+        border-radius: 6px;
+        color: #FFF;
+        border: 0;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .card1-info {
+        padding: 1rem 1rem;
+        text-align: center;
+        font-size: .875rem;
+        color: #8597a3;
+
+        a {
+            display: block;
+            color: #6658d3;
+            text-decoration: none;
+        }
+    }
+
+    input[type=file]::-ms-browse {
+        border: 2px solid #6c5ce7;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        background-color: #a29bfe;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+
+    input[type=file]::-webkit-file-upload-button {
+        border: 2px solid #6c5ce7;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        background-color: #a29bfe;
+        transition: 1s;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+
+    input[type=file]::file-selector-button {
+        border: 2px solid #6c5ce7;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        background-color: #a29bfe;
+        transition: 1s;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+
+    input[type=file]::-ms-browse:hover {
+        background-color: #81ecec;
+        border: 2px solid #00cec9;
+    }
+
+    input[type=file]::-webkit-file-upload-button:hover {
+        background-color: #81ecec;
+        border: 2px solid #00cec9;
+    }
+
+    input[type=file]::file-selector-button:hover {
+        background-color: #81ecec;
+        border: 2px solid #00cec9;
+    }
+
+    .alignleft {
+        float: left;
+    }
+
+    .alignright {
+        float: right;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img src="{{ url_for ('static', filename = 'logo.png') }}" height="50" width="150" alt="logo" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('benignormalign') }}">Benign & Malign</a></li>
+                    <li><a href="{{ url_for('tirad') }}">Tirad Type</a></li>
+                    <li><a href="{{ url_for('gettiradorb') }}">Manual Testing</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>{{ output }}
+        <br><br>
+        {{ output1 }}
+    </center>
+    <form action="/gettrtypeorb" method="POST" enctype="multipart/form-data">
+
+        <div class="container">
+            <!-- code here -->
+            <div class="card1">
+                <div class="card1-image">
+                    <h2 class="card1-heading">
+                        TNTD :
+                        <small>Test tirad type using orb and structural similarity algorithm</small>
+                    </h2>
+                </div>
+                <div class="card1-form">
+
+                    <div class="input">
+
+                        <center>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                type="file" name="file" id="fileToUpload">
+                        </center>
+                    </div>
+
+                    <div class="action">
+                        <input type="submit" class="action-button" value="upload" />
+                    </div>
+                </div>
+    </form>
+
+    </div>
+    </div>
+    <header>
+        <div class="container">
+            <nav1>
+                <ul>
+                    <h1 align="center">
+                        <li>
+                            <font color="white">About us</font>
+                        </li>
+                    </h1>
+                    <hr>
+                    <h2 align=left">
+                        <font color="#DC143C">Members:</font>
+                    </h2>
+                    <p class="alignleft">
+                        <font color="white"> -Hariharan<br />
+                            -Shaarumenan<br />
+                            -Saravanakumar</font>
+                    </p>
+                    <p class="alignright">
+                        <font color="white"> E-mail : tntd2021@gmail.com<br />
+                            Facebook : TNTD_2021</font>
+                    </p>
+                </ul>
+            </nav1>
+        </div>
+    </header>
+</body>
+
+</html>

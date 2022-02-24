@@ -1,0 +1,426 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:1000,1000">
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+    body {
+        margin: 0;
+        background: #ffffff;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 800;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header {
+        background: #191970;
+    }
+
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .logo {
+        float: left;
+        padding: 10px 0;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 23px;
+
+        position: relative;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: #DC143C;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: #ffffff;
+
+        position: absolute;
+        top: 0;
+        width: 0%;
+
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 100%;
+    }
+
+    nav1 {}
+
+    nav1 center {
+        text-align-last: center;
+    }
+
+    nav1 ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav1 li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 23px;
+
+        position: relative;
+    }
+
+    nav1 a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    #service {
+        background: white;
+    }
+
+    .grid_wrapper {
+        padding: 4rem;
+        margin-left: 16rem;
+        margin-right: 16rem;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 4em;
+    }
+
+    .item {}
+
+
+    .card {
+        text-decoration: none;
+    }
+
+    .card_content {
+        padding: 1rem;
+    }
+
+
+    .wrapper {
+        padding: 4rem;
+        margin-left: 15rem;
+        margin-right: 0rem;
+
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 4em;
+    }
+
+    .cards_wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cards_wrap .card_item {
+        width: 25%;
+        padding: 10px;
+    }
+
+    .cards_wrap .card_inner {
+        background: #191970;
+    }
+
+    .cards_wrap .card_top {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        padding-bottom: 0;
+    }
+
+    .cards_wrap .card_bottom {
+        padding: 15px;
+    }
+
+    .cards_wrap .card_bottom .card_category {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .cards_wrap .card_bottom .card_info {
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px dashed #DC143C;
+    }
+
+    .cards_wrap .card_bottom .card_info .title {
+        color: #0071bc;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .cards_wrap .card_bottom .card_creator {
+        text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+        .cards_wrap .card_item {
+            width: 33.3%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cards_wrap .card_item {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 528px) {
+        .cards_wrap .card_item {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #191970;
+        color: white;
+        text-align: center;
+    }
+
+
+
+    .button {
+        border: none;
+        color: #DC143C;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #DC143C;
+        color: black;
+        border: 2px solid #DC143C;
+    }
+
+    .button1:hover {
+        background-color: #DC143C;
+        color: white;
+    }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    .alignleft {
+        float: left;
+    }
+
+    .alignright {
+        float: right;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <img src="{{ url_for ('static', filename = 'logo.png') }}" height="50" width="150" alt="logo" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('benignormalign') }}">Benign & Malign</a></li>
+                    <li><a href="{{ url_for('tirad') }}">Tirad Type</a></li>
+                    <li><a href="{{ url_for('gettiradorb') }}">Manual Testing</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h2>
+        <p align="left">
+            <font color="blue">&nbsp;&nbsp;What is that Thyroid Nodule Type Detection do? </font>
+        </p>
+    </h2>
+    <p align="left">
+        <font color="black">&nbsp;&nbsp;&nbsp;&nbsp;The thyroid is a butterfly-shaped gland that sits low on the front
+            of the neck. Your thyroid lies below your Adam's apple, along the front of the windpipe. The thyroid
+            &nbsp;&nbsp;&nbsp;&nbsp;has two side lobes, connected by a bridge (isthmus) in the middle.Thyroid nodules
+            are lump like formation in the thyroid which might be cancerous in heavy cases.
+            &nbsp;&nbsp;&nbsp;&nbsp;Generally Radiologists analyse the ultra-sound scan of the thyroid and detect the
+            nodule. For large number of samples it takes time. With TNTD we facilitate the
+            &nbsp;&nbsp;&nbsp;&nbsp;analysation by introducing a Deep learning model. We use CNN and image processing
+            algorithms to do this task. With this a large number of sample can be analyzed
+            &nbsp;&nbsp;&nbsp;&nbsp;within a short period of time. Thus, increasing the analyzing frequency
+            significantly. All you need is your scan image and you are ready to go. Upload your scan and get
+            &nbsp;&nbsp;&nbsp;&nbsp;the result immediately. </font>
+    </p>
+    <br />
+    <div class="wrapper">
+        <div class="cards_wrap">
+            <div class="card_item">
+                <div class="card_inner">
+                    <div class="card_top">
+                        <img src="https://www.ambrosetti.eu/admin/textimage_attachments/1071/healthcare-1920-x-1080.jpg"
+                            alt="car" width="92%" />
+                    </div>
+                    <div class="card_bottom">
+
+                        <div class="card_info">
+                            <p class="title">
+                                <font color="#DC143C">Benign and Malign
+                            </p>
+                            </font>
+                            <p>
+                                <font color="white">
+                                    To Detect whether it is benign or Malign
+                                    <center>
+                                        <form action="/benignormalign">
+                                            <button class="button button1" type="submit">
+                                                Click Here
+                                            </button>
+                                        </form>
+                                    </center>
+                                </font>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="card_inner">
+                    <div class="card_top">
+                        <img src="https://www.ambrosetti.eu/admin/textimage_attachments/1071/healthcare-1920-x-1080.jpg"
+                            alt="car" width="92%" />
+                    </div>
+                    <div class="card_bottom">
+
+                        <div class="card_info">
+                            <p class="title">
+                                <font color="#DC143C">Tirad Types
+                            </p>
+                            </font>
+                            <p>
+                                <font color="white">
+                                    To check which tirad type it belongs
+                                    <center>
+                                        <form action="/tirad">
+                                            <button class="button button1" type="submit">
+                                                Click Here
+                                            </button>
+                                        </form>
+                                    </center>
+                                </font>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="card_inner">
+                    <div class="card_top">
+                        <img src="https://www.ambrosetti.eu/admin/textimage_attachments/1071/healthcare-1920-x-1080.jpg"
+                            alt="car" width="92%" />
+                    </div>
+                    <div class="card_bottom">
+
+                        <div class="card_info">
+                            <p class="title">
+                                <font color="#DC143C">Manual Testing
+                            </p>
+                            </font>
+                            <p>
+                                <font color="white">
+                                    To check the nodule type
+                                    <center>
+                                        <form action="/gettiradorb">
+                                            <button class="button button1" type="submit">
+                                                Click Here
+                                            </button>
+                                        </form>
+                                    </center>
+                                </font>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <header>
+        <div class="container">
+            <nav1>
+                <ul>
+                    <h1 align="center">
+                        <li>
+                            <font color="white">About Us</font>
+                        </li>
+                    </h1>
+                    <hr>
+                    <h2 align=left">
+                        <font color="#DC143C">Members:</font>
+                    </h2>
+                    <p class="alignleft">
+                        <font color="white"> -Hariharan<br />
+                            -Shaarumenan<br />
+                            -Saravanakumar</font>
+                    </p>
+                    <p class="alignright">
+                        <font color="white"> E-mail : tntd2021@gmail.com<br />
+                            Facebook : TNTD_2021</font>
+                    </p>
+                </ul>
+            </nav1>
+        </div>
+    </header>
+</body>
+
+</html>
